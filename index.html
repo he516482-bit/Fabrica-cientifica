@@ -1,0 +1,499 @@
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fábrica Científica</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            body {
+                font-family: 'Arial', sans-serif;
+                background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+                color: #e0e0e0;
+                text-align: center;
+            }
+            
+            header {
+                background: rgba(0, 0, 0, 0.7);
+                padding: 20px;
+                border-bottom: 3px solid #00d4ff;
+            }
+            
+            h1 {
+                color: #00d4ff;
+                font-size: 2.5em;
+                margin-bottom: 20px;
+                text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+            }
+            
+            nav ul {
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+            
+            .tab-button {
+                padding: 12px 25px;
+                background: #00d4ff;
+                border: none;
+                color: #1a1a2e;
+                font-weight: bold;
+                cursor: pointer;
+                border-radius: 5px;
+                transition: 0.3s;
+            }
+            
+            .tab-button:hover {
+                background: #00a8cc;
+                box-shadow: 0 0 15px rgba(0, 212, 255, 0.7);
+            }
+            
+            .tab-button.active {
+                background: #ff006e;
+                box-shadow: 0 0 20px rgba(255, 0, 110, 0.8);
+            }
+            
+            main {
+                max-width: 1000px;
+                margin: 40px auto;
+                padding: 20px;
+            }
+            
+            .tab-content {
+                display: none;
+                animation: fadeIn 0.5s;
+                background: rgba(0, 0, 0, 0.5);
+                padding: 30px;
+                border-radius: 10px;
+                border-left: 5px solid #00d4ff;
+            }
+            
+            .tab-content.active {
+                display: block;
+            }
+            
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            
+            .section-title {
+                color: #00d4ff;
+                font-size: 2em;
+                margin-bottom: 20px;
+                text-shadow: 0 0 8px rgba(0, 212, 255, 0.4);
+            }
+            
+            .subtitle {
+                color: #ff006e;
+                font-size: 1.5em;
+                margin-top: 25px;
+                margin-bottom: 15px;
+            }
+            
+            .content-text {
+                font-size: 1.1em;
+                line-height: 1.8;
+                margin-bottom: 15px;
+                text-align: justify;
+            }
+            
+            .content-image {
+                max-width: 100%;
+                width: 300px;
+                margin: 20px auto;
+                border-radius: 8px;
+                border: 2px solid #00d4ff;
+                display: block;
+            }
+            
+            .list-content {
+                text-align: left;
+                margin: 15px auto;
+                max-width: 600px;
+            }
+            
+            .list-content ul, .list-content ol {
+                margin-left: 20px;
+                margin-bottom: 15px;
+            }
+            
+            .list-content li {
+                margin-bottom: 8px;
+                line-height: 1.6;
+            }
+            
+            .subsection {
+                color: #00d4ff;
+                font-weight: bold;
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+            
+            .references {
+                background: rgba(0, 150, 200, 0.1);
+                border-left: 4px solid #ff006e;
+                padding: 20px;
+                margin-top: 30px;
+                text-align: left;
+            }
+            
+            .references h4 {
+                color: #ff006e;
+                margin-bottom: 15px;
+            }
+            
+            .reference-item {
+                margin-bottom: 12px;
+                font-size: 0.95em;
+                line-height: 1.6;
+            }
+            
+            .reference-item a {
+                color: #00d4ff;
+                text-decoration: none;
+            }
+            
+            .reference-item a:hover {
+                text-decoration: underline;
+            }
+            
+            footer {
+                background: rgba(0, 0, 0, 0.8);
+                padding: 20px;
+                border-top: 3px solid #00d4ff;
+                margin-top: 40px;
+                color: #00d4ff;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>🧬 Fábrica Científica</h1>
+            <nav>
+                <button class="tab-button active" onclick="openTab(event, 'maquinaria')">La Maquinaria</button>
+                <button class="tab-button" onclick="openTab(event, 'energeticas')">Centrales Energéticas</button>
+                <button class="tab-button" onclick="openTab(event, 'centro')">El Centro de Mando</button>
+                <button class="tab-button" onclick="openTab(event, 'entregables')">Entregables</button>
+            </nav>
+        </header>
+
+        <main>
+            <div id="centro" class="tab-content">
+                <h2 class="section-title">El Centro de Mando</h2>
+                
+                <h3 class="subtitle">Genética y Reproducción</h3>
+                <p class="content-text">El centro de control celular contiene toda la información necesaria para la vida. Aquí reside el ADN, la molécula maestra que dirige cada proceso biológico.</p>
+                <img src="adn.jpg" alt="ADN" class="content-image">
+                <p class="content-text">La replicación del ADN asegura que cada célula nueva posea las instrucciones completas para su funcionamiento correcto.</p>
+                
+                <div class="list-content">
+                    <div class="subsection">Núcleo y nucleolo</div>
+                    <div class="subsection" style="font-size: 1.1em; color: #00d4ff;">Núcleo</div>
+                    <ul>
+                        <li>Guarda el ADN.</li>
+                        <li>Controla todas las funciones de la célula.</li>
+                    </ul>
+                    
+                    <div class="subsection" style="font-size: 1.1em; color: #00d4ff;">Nucleolo</div>
+                    <ul>
+                        <li>Produce ribosomas.</li>
+                        <li>Los ribosomas fabrican proteínas.</li>
+                    </ul>
+                </div>
+                
+                <div class="list-content">
+                    <div class="subsection">Replicación del ADN</div>
+                    <p class="content-text">Es el proceso en el que el ADN se copia antes de que la célula se divida, para que las dos células nuevas tengan la misma información genética.</p>
+                </div>
+                
+                <div class="list-content">
+                    <div class="subsection">Dogma central</div>
+                    <p class="content-text">Es el proceso por el cual la información genética se convierte en proteínas.</p>
+                    
+                    <div class="subsection" style="font-size: 1.1em; color: #00d4ff;">Transcripción</div>
+                    <ul>
+                        <li>El ADN se convierte en ARN mensajero (ARNm).</li>
+                    </ul>
+                    
+                    <div class="subsection" style="font-size: 1.1em; color: #00d4ff;">Traducción</div>
+                    <ul>
+                        <li>El ribosoma lee el ARNm.</li>
+                        <li>Forma proteínas.</li>
+                    </ul>
+                </div>
+                
+                <div class="list-content">
+                    <div class="subsection">Mitosis (fases)</div>
+                    <ol>
+                        <li><strong>Profase:</strong> El ADN se hace visible.</li>
+                        <li><strong>Metafase:</strong> Los cromosomas se alinean en el centro.</li>
+                        <li><strong>Anafase:</strong> Los cromosomas se separan.</li>
+                        <li><strong>Telofase:</strong> Se forman dos núcleos nuevos.</li>
+                    </ol>
+                </div>
+                
+                <div class="references">
+                    <h4>Referencias Fase III: El Centro de Mando (Genética y Reproducción)</h4>
+                    <div class="reference-item">1. Genética: un enfoque conceptual. (2017). Editorial Médica Panamericana. <a href="#">Ver definición científica del ADN</a></div>
+                    <div class="reference-item">2. Biología molecular del gen. (2014). Pearson Educación. <a href="#">Ver definición científica del ADN</a></div>
+                    <div class="reference-item">3. Biología molecular de la célula. (2015). Editorial Médica Panamericana. <a href="#">Ver explicación científica del ADN y su estructura</a></div>
+                    <div class="reference-item">4. Biología. (2021). Pearson Educación. <a href="#">Ver explicación científica del ADN y la información genética</a></div>
+                </div>
+            </div>
+
+            <div id="energeticas" class="tab-content">
+                <h2 class="section-title">Centrales Energéticas</h2>
+                
+                <h3 class="subtitle">Metabolismo</h3>
+                <p class="content-text">Las mitocondrias son las powerhouses de la célula, convirtiendo nutrientes en energía utilizable mediante procesos metabólicos complejos.</p>
+                <img src="mitocondria.jpg" alt="Mitocondria" class="content-image">
+                <p class="content-text">A través de la respiración celular, la glucosa se transforma en ATP, el combustible que impulsa todas las funciones vitales.</p>
+                
+                <div class="list-content">
+                    <div class="subsection">¿Qué es el ATP?</div>
+                    <p class="content-text">El ATP (adenosín trifosfato) es la energía que usa la célula para funcionar.</p>
+                    <p class="content-text">Se utiliza para:</p>
+                    <ul>
+                        <li>Mover sustancias,</li>
+                        <li>Fabricar proteínas,</li>
+                        <li>Dividirse,</li>
+                        <li>Y mantenerse viva.</li>
+                    </ul>
+                </div>
+                
+                <div class="list-content">
+                    <div class="subsection">Mitocondria</div>
+                    <ul>
+                        <li>Es el organelo que produce energía.</li>
+                        <li>Tiene dos partes importantes:
+                            <ul>
+                                <li>Crestas (donde se produce la energía)</li>
+                                <li>Matriz (parte interna)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                    <div class="subsection" style="font-size: 1.1em; color: #00d4ff;">Proceso: respiración aeróbica</div>
+                    <ul>
+                        <li>Usa oxígeno.</li>
+                        <li>Convierte la glucosa en ATP.</li>
+                        <li>Produce mucha energía.</li>
+                    </ul>
+                </div>
+                
+                <div class="list-content">
+                    <div class="subsection">Cloroplasto</div>
+                    <ul>
+                        <li>Solo existe en células vegetales.</li>
+                        <li>Tiene dos partes:
+                            <ul>
+                                <li>Tilacoides</li>
+                                <li>Estroma</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                    <div class="subsection" style="font-size: 1.1em; color: #00d4ff;">Proceso: fotosíntesis</div>
+                    <p class="content-text">La planta usa:</p>
+                    <ul>
+                        <li>Luz solar,</li>
+                        <li>Agua,</li>
+                        <li>Dióxido de carbono,</li>
+                    </ul>
+                    <p class="content-text">Para producir:</p>
+                    <ul>
+                        <li>Glucosa,</li>
+                        <li>Oxígeno.</li>
+                    </ul>
+                </div>
+                
+                <div class="list-content">
+                    <div class="subsection">Citoplasma / Citosol</div>
+                    <p class="content-text">Aquí ocurren dos procesos:</p>
+                    
+                    <div class="subsection" style="font-size: 1.1em; color: #00d4ff;">Glucólisis</div>
+                    <ul>
+                        <li>Se rompe la glucosa.</li>
+                        <li>No necesita oxígeno.</li>
+                        <li>Produce poca energía.</li>
+                    </ul>
+                    
+                    <div class="subsection" style="font-size: 1.1em; color: #00d4ff;">Fermentación</div>
+                    <ul>
+                        <li>Se usa cuando no hay oxígeno.</li>
+                        <li>Puede producir:
+                            <ul>
+                                <li>Ácido láctico</li>
+                                <li>Alcohol</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="references">
+                    <h4>Referencias Fase II: Centrales Energéticas (Metabolismo)</h4>
+                    <div class="reference-item">1. Principios de bioquímica de Lehninger. (2017). Editorial Omega. <a href="#">Ver explicación científica del ADN y la función celular</a></div>
+                    <div class="reference-item">2. Biología. (2021). Pearson Educación. <a href="#">Ver explicación científica del ADN y la célula</a></div>
+                    <div class="reference-item">3. Fisiología vegetal. (2015). Sinauer Associates. <a href="#">Ver explicación científica del ADN y su función biológica</a></div>
+                    <div class="reference-item">4. Bioquímica. (2018). Editorial Reverté. <a href="#">Ver explicación científica del ADN y su función en la célula</a></div>
+                </div>
+            </div>
+
+            <div id="maquinaria" class="tab-content active">
+                <h2 class="section-title">La Maquinaria</h2>
+                
+                <h3 class="subtitle">Estructura Celular</h3>
+                <p class="content-text">Las proteínas construyen la estructura y ejecutan las funciones de la célula. Son los ladrillos y operarios de la fábrica biológica.</p>
+                <img src="proteina.jpg" alt="Proteína" class="content-image">
+                <p class="content-text">El ribosoma, máquina molecular por excelencia, traduce la información genética en proteínas funcionales que sostienen la vida.</p>
+                
+                <div class="list-content">
+                    <div class="subsection">Diferenciación celular</div>
+                    <p class="content-text">Las células se clasifican en procariotas y eucariotas.</p>
+                    
+                    <div class="subsection" style="font-size: 1.1em; color: #00d4ff;">Células procariotas</div>
+                    <ul>
+                        <li>No tienen núcleo verdadero.</li>
+                        <li>El ADN está libre en el citoplasma.</li>
+                        <li>No tienen organelos con membrana.</li>
+                        <li>Ejemplo: bacterias.</li>
+                    </ul>
+                    
+                    <div class="subsection" style="font-size: 1.1em; color: #00d4ff;">Células eucariotas</div>
+                    <ul>
+                        <li>Sí tienen núcleo.</li>
+                        <li>Tienen organelos como mitocondria, aparato de Golgi, etc.</li>
+                        <li>Son más grandes y complejas.</li>
+                        <li>Ejemplo: células animales y vegetales.</li>
+                    </ul>
+                </div>
+                
+                <div class="list-content">
+                    <div class="subsection">Diferencia entre célula vegetal y animal</div>
+                    
+                    <div class="subsection" style="font-size: 1.1em; color: #00d4ff;">Célula vegetal</div>
+                    <ul>
+                        <li>Tiene pared celular.</li>
+                        <li>Tiene cloroplastos.</li>
+                        <li>Tiene vacuola grande.</li>
+                        <li>Realiza fotosíntesis.</li>
+                    </ul>
+                    
+                    <div class="subsection" style="font-size: 1.1em; color: #00d4ff;">Célula animal</div>
+                    <ul>
+                        <li>No tiene pared celular.</li>
+                        <li>No tiene cloroplastos.</li>
+                        <li>Tiene vacuolas pequeñas.</li>
+                        <li>Solo obtiene energía de los alimentos.</li>
+                    </ul>
+                </div>
+                
+                <div class="list-content">
+                    <div class="subsection">Organelos</div>
+                    
+                    <div class="subsection" style="font-size: 1.1em; color: #ff006e;">A. Componentes externos</div>
+                    
+                    <div class="subsection" style="font-size: 1em; color: #00d4ff;">Membrana plasmática</div>
+                    <ul>
+                        <li>Es una capa que rodea la célula.</li>
+                        <li>Está formada por fosfolípidos y proteínas.</li>
+                        <li>Funciona como permeabilidad selectiva, es decir, deja entrar lo que la célula necesita y saca los desechos.</li>
+                        <li>Se conoce como modelo del mosaico fluido.</li>
+                    </ul>
+                    
+                    <div class="subsection" style="font-size: 1em; color: #00d4ff;">Pared celular</div>
+                    <ul>
+                        <li>En plantas: hecha de celulosa.</li>
+                        <li>En hongos: hecha de quitina.</li>
+                        <li>En bacterias: hecha de peptidoglicano.</li>
+                        <li>Sirve para proteger y dar forma a la célula.</li>
+                    </ul>
+                    
+                    <div class="subsection" style="font-size: 1em; color: #00d4ff;">Cápsula (procariotas)</div>
+                    <ul>
+                        <li>Es una capa externa.</li>
+                        <li>Protege a la bacteria.</li>
+                        <li>Le ayuda a adherirse a superficies.</li>
+                        <li>Evita que el sistema inmunológico la destruya.</li>
+                    </ul>
+                    
+                    <div class="subsection" style="font-size: 1.1em; color: #ff006e;">B. Organelos de movimiento</div>
+                    
+                    <div class="subsection" style="font-size: 1em; color: #00d4ff;">Cilios y flagelos</div>
+                    <ul>
+                        <li>Están formados por microtúbulos.</li>
+                        <li>Permiten que la célula se mueva.</li>
+                        <li>También ayudan a mover sustancias alrededor de la célula.</li>
+                    </ul>
+                    
+                    <div class="subsection" style="font-size: 1em; color: #00d4ff;">Pseudópodos</div>
+                    <ul>
+                        <li>Son "extensiones" del citoplasma.</li>
+                        <li>La célula cambia de forma para desplazarse.</li>
+                        <li>Ejemplo: amebas y glóbulos blancos.</li>
+                    </ul>
+                </div>
+                
+                <div class="references">
+                    <h4>Referencias Fase I: La Maquinaria (Estructura)</h4>
+                    <div class="reference-item">1. Biología. (2021). Pearson Educación. <a href="#">Ver información científica sobre organelos celulares</a></div>
+                    <div class="reference-item">2. Biología molecular de la célula. (2015). Editorial Médica Panamericana. <a href="#">Ver definición científica de organelo celular</a></div>
+                    <div class="reference-item">3. Biología. (2014). McGraw-Hill Education. <a href="#">Ver definición científica del núcleo celular</a></div>
+                    <div class="reference-item">4. Microbiología: una introducción. (2019). Pearson Educación. <a href="#">Ver explicación científica del núcleo celular y su función</a></div>
+                </div>
+            </div>
+
+            <div id="entregables" class="tab-content">
+                <h2 class="section-title">Entregables</h2>
+                <p class="content-text">Aquí se muestran los entregables de cada fase del proyecto y materiales adicionales.</p>
+                <h3>Imágenes de los cubos</h3>
+                <img src="1.1.jpeg" alt="Cubo1.1" class="content-image">
+                <img src="1.2.jpeg" alt="Cubo1.2" class="content-image">
+                <img src="1.3.jpeg" alt="Cubo1.3" class="content-image">
+                <img src="1.4.jpeg" alt="Cubo1.4" class="content-image">
+                <img src="1.5.jpeg" alt="Cubo1.5" class="content-image">
+                <img src="1.6.jpeg" alt="Cubo1.6" class="content-image">
+                <img src="2.1.jpeg" alt="Cubo2.1" class="content-image">
+                <img src="2.2.jpeg" alt="Cubo2.2" class="content-image">
+                <img src="2.3.jpeg" alt="Cubo2.3" class="content-image">
+                <img src="2.4.jpeg" alt="Cubo2.4" class="content-image">
+                <img src="2.5.jpeg" alt="Cubo2.5" class="content-image">
+                <img src="2.6.jpeg" alt="Cubo2.6" class="content-image">
+                <h3>Imágenes de los cuadros comparativos</h3>
+                <img src="3.1.jpeg" alt="Comparativo1" class="content-image">
+                <img src="3.2.jpeg" alt="Comparativo2" class="content-image">
+                <h3>Imágenes del diagrama</h3>
+                <img src="4.1.jpeg" alt="Diagrama1" class="content-image">
+            </div>
+        </main>
+
+        <footer>
+            <p>Equipo #7 Cesareas - 408</p>
+            <p>Hernández Barbosa Carmina Lolbe - Jimenez Hernández Karime</p>
+            <p>&copy; 2026 Fábrica Científica. Todos los derechos reservados.</p>
+        </footer>
+
+        <script>
+            function openTab(evt, tabName) {
+                const contents = document.getElementsByClassName("tab-content");
+                for (let i = 0; i < contents.length; i++) {
+                    contents[i].classList.remove("active");
+                }
+                const buttons = document.getElementsByClassName("tab-button");
+                for (let i = 0; i < buttons.length; i++) {
+                    buttons[i].classList.remove("active");
+                }
+                document.getElementById(tabName).classList.add("active");
+                evt.currentTarget.classList.add("active");
+            }
+        </script>
+    </body>
+    </html>
